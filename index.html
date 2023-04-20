@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <style>
+*{
+margin: 0px;
+}
+#he{
+    font-size: 20px;
+}
+#cre{
+    font-size: 18px;
+    color: red;
+}
+.container{
+    width: 380px;
+    height: 250px;
+    background-color: rgb(187, 187, 187);
+    box-shadow: 2px 2px 10px;
+    margin-top: 200px;
+}
+.content{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+.content button{
+    margin-top: 10px;
+    outline: none;
+}
+.content select{
+    outline: none;
+    border: none;
+}
+.content p{
+    margin-top: -5px;
+}
+
+    </style>
+    <script src="code_process.js"></script>
+</head>
+<body>
+    <center>
+        <div class="container">
+            <div class="content">
+                <p id="he">PHP LAB PROGRAMS</p><br>
+                <select name="" id="ps" onchange="selectPrg()" style="width:300px;height:30px;text-align:center;outline: none; ">
+                    <option value="none">Select the Program to Copy</option>
+                    <option value="p1">Prime Number Using PHP</option>
+                    <option value="p2">Display The book details in the library</option>
+                    <option value="p3">Display paitent details in hospital</option>
+                    <option value="p4">Student Mark List</option>
+                    <option value="p5">Online Resume Submission</option>
+                    <option value="p6">Login Authentication</option>
+                    <option value="p7">Employee Details in Database</option>
+                    <!-- <option value="p8">Program 8</option>
+                    <option value="p9">Program 9</option>
+                    <option value="p10">Program 10</option>
+                    <option value="p11">Program 11</option>
+                    <option value="p12">Program 12</option>
+                    <option value="p13">Program 13</option>
+                    <option value="p14">Program 14</option>
+                    <option value="p15">Program 15</option>
+                    <option value="p16">Program 16</option> -->
+                </select><br><br>
+                <p id="cre"></p>
+                <button id="but" onclick="chck()" disabled>Download File</button>
+            </div>
+        </div>
+    </center>
+
+
+    <!-- Programs that need to be pasted -->
+    <textarea id="program1" hidden disabled>
+&lt;html&gt;
+&lt;style&gt;
+body{
+background-color:lightblue;
+}
+h2{
+text-align:center;
+}
+&lt;/style&gt;
+&lt;body&gt;
+&lt;h2&gt;Prime Number&lt;/h2&gt;
+&lt;form action="Primenum.php" method="post"&gt;
+&lt;table border="2" align="center" cellpadding="5" cellspacing="5"&gt;
+&lt;tr&gt;
+&lt;td&gt;Enter a number&lt;/td&gt;
+&lt;td&gt;&lt;input type="text" name="number" size="48"&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;input type="reset" value="Reset"&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+//Primenum.php
+
+&lt;html&gt;
+&lt;body bgcolor="87ceeb"&gt;
+&lt;center&gt;Prime Number&lt;/center&gt;
+&lt;br&gt;
+&lt;?php
+error_reporting(E_ALL);
+$num=$_POST["number"];
+for($j=2;$j&lt;=$num;$j++)
+{
+for($k=2;$k&lt;$j;$k++)
+{
+if($j%$k==0)
+{
+break;
+}
+}
+if($k==$j)
+echo"&lt;h3&gt;&lt;center&gt;Prime Number:$j&lt;br&gt;&lt;/center&gt;&lt;/h3&gt;";
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </textarea>
+
+    <!-- php program two -->
+
+    <textarea id="program2" hidden disabled>
+        EnterBooks.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Simple Library Management System&lt;/h2&gt;&lt;/center&gt;
+&lt;!--Once the form is submitted, all the form data is forwarded to
+InsertBooks.php --&gt;
+&lt;form action=&quot;InsertBooks.php&quot; method=&quot;post&quot;&gt;
+&lt;table border=&quot;2&quot; align=&quot;center&quot; cellpadding=&quot;5&quot; cellspacing=&quot;5&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt; Enter ISBN :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;isbn&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Enter Title :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;title&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Enter Author :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;author&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Enter Edition :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;edition&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Enter Publication: &lt;/td&gt;
+
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;publication&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+InsertBooks.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Simple Library Management System&lt;/h2&gt;&lt;/center&gt;
+&lt;br&gt;
+&lt;?php
+include(&quot;DBConnection.php&quot;);
+$isbn=$_POST[&quot;isbn&quot;];
+$title=$_POST[&quot;title&quot;];
+$author=$_POST[&quot;author&quot;];
+
+$edition=$_POST[&quot;edition&quot;];
+$publication=$_POST[&quot;publication&quot;];
+$query = &quot;insert into book_info(isbn,title,author,edition,publication)
+values(&#39;$isbn&#39;,&#39;$title&#39;,&#39;$author&#39;,&#39;$edition&#39;,&#39;$publication&#39;)&quot;; //Insert query to add
+book details into the book_info table
+$result = mysqli_query($conn,$query);
+?&gt;
+&lt;h3&gt; Book information is inserted successfully &lt;/h3&gt;
+&lt;a href=&quot;SearchBooks.php&quot;&gt;To search for the Book information click here &lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+SearchBooks.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Simple Library Management System&lt;/h2&gt;&lt;/center&gt;
+&lt;form action = &quot;DisplayBooks.php&quot; method=&quot;get&quot;&gt;
+&lt;br&gt;
+&lt;center&gt;Enter the title of the book to be searched :
+&lt;input type=&quot;text&quot; name=&quot;search&quot; size=&quot;48&quot;&gt;
+&lt;br&gt;&lt;/br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+&lt;/center&gt;
+&lt;br&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+DisplayBooks.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Simple Library Management System&lt;/h2&gt;&lt;/center&gt;&lt;br&gt;
+&lt;?php
+include(&quot;DBConnection.php&quot;);
+$search = $_REQUEST[&quot;search&quot;];
+$query = &quot;select ISBN,Title,Author,Edition,Publication from book_info where
+title like &#39;%$search%&#39;&quot;; //search with a book name in the table book_info
+$result = mysqli_query($conn,$query);
+if(mysqli_num_rows($result)&gt;0)if(mysqli_num_rows($result)&gt;0)
+{
+?&gt;
+&lt;table border=&quot;2&quot; align=&quot;center&quot; cellpadding=&quot;5&quot; cellspacing=&quot;5&quot;&gt;
+&lt;tr&gt;
+&lt;th&gt; ISBN &lt;/th&gt;
+&lt;th&gt; Title &lt;/th&gt;
+&lt;th&gt; Author &lt;/th&gt;
+&lt;th&gt; Edition &lt;/th&gt;
+&lt;th&gt; Publication &lt;/th&gt;
+&lt;/tr&gt;
+&lt;?php while($row = mysqli_fetch_assoc($result))
+
+{
+?&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;ISBN&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;Title&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;Author&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;Edition&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;Publication&quot;];?&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;?php
+}
+}
+else
+echo &quot;&lt;center&gt;No books found in the library by the name $search &lt;/center&gt;&quot; ;
+?&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+DBConnection.php:
+&lt;?php
+$conn = mysqli_connect(&#39;localhost&#39;, &#39;root&#39;, &#39;&#39;, &#39;books&#39;);
+if(!$conn){
+die(&quot;Error: Failed to connect to database!&quot;);
+
+} ?&gt;
+Db.sql :
+
+Create database books;
+Use books;
+CREATE TABLE BOOK_INFO(ISBN VARCHAR(30)PRIMARY
+KEY,TITLE VARCHAR(30)NOT NULL,
+AUTHOR VARCHAR(30),EDITION VARCHAR(30),PUBLICATION
+VARCHAR (30));
+    </textarea>
+
+<!-- program 3 -->
+
+    <textarea id="program3" hidden disabled>
+        EnterDetails.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Patient details in a hospital&lt;/h2&gt;&lt;/center&gt;
+&lt;form action=&quot;InsertDetails.php&quot; method=&quot;post&quot;&gt;
+&lt;table border=&quot;2&quot; align=&quot;center&quot; cellpadding=&quot;5&quot; cellspacing=&quot;5&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt; Patient Registration&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Name :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Disease :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;disease&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Age :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;age&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Gender:&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;gender&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Address: &lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;address&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; Mobile: &lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;mobile&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Room: &lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;room&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+InsertDetails.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+
+&lt;center&gt;&lt;h2&gt;Patient details in a hospital&lt;/h2&gt;&lt;/center&gt;
+&lt;br&gt;
+&lt;?php
+include(&quot;DBConnection.php&quot;);
+$name=$_POST[&quot;name&quot;];
+$disease=$_POST[&quot;disease&quot;];
+$age=$_POST[&quot;age&quot;];
+$gender=$_POST[&quot;gender&quot;];
+$address=$_POST[&quot;address&quot;];
+$mobile=$_POST[&quot;mobile&quot;];
+$room=$_POST[&quot;room&quot;];
+$query = &quot;insert into
+details_info(name,disease,age,gender,address,mobile,room)
+values(&#39;$name&#39;,&#39;$disease&#39;,&#39;$age&#39;,&#39;$gender&#39;,&#39;$address&#39;,&#39;$mobile&#39;,&#39;$room&#39;)&quot;; //Insert
+query to add patients details into the details_info table
+$result = mysqli_query($conn,$query);
+?&gt;
+&lt;h3&gt; Patients information is inserted successfully &lt;/h3&gt;
+&lt;a href=&quot;SearchDetails.php&quot;&gt;To search for the patient information click here
+&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+SearchDetails.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Patient details in a hospital&lt;/h2&gt;&lt;/center&gt;
+
+&lt;form action = &quot;DisplayDetails.php&quot; method=&quot;get&quot;&gt;
+&lt;br&gt;
+&lt;center&gt;Enter the name of the patient to be searched :
+&lt;input type=&quot;text&quot; name=&quot;search&quot; size=&quot;48&quot;&gt;
+&lt;br&gt;&lt;/br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+&lt;/center&gt;
+&lt;br&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+DisplayDetails.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Patient details in a hospital&lt;/h2&gt;&lt;/center&gt;
+&lt;br&gt;
+&lt;?php
+include(&quot;DBConnection.php&quot;);
+$search = $_REQUEST[&quot;search&quot;];
+$query = &quot;select name,disease,age,gender,address,mobile,room from
+details_info where name like &#39;%$search%&#39;&quot;; //search with a patient name in the
+table details_info
+$result = mysqli_query($conn,$query);
+
+if(mysqli_num_rows($result)&gt;0)if(mysqli_num_rows($result)&gt;0)
+{
+?&gt;
+&lt;table border=&quot;2&quot; align=&quot;center&quot; cellpadding=&quot;5&quot; cellspacing=&quot;5&quot;&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt; Disease &lt;/th&gt;
+&lt;th&gt; Age &lt;/th&gt;
+&lt;th&gt; Gender &lt;/th&gt;
+&lt;th&gt; Address &lt;/th&gt;
+&lt;th&gt; Mobile &lt;/th&gt;
+&lt;th&gt; Room &lt;/th&gt;
+&lt;/tr&gt;
+&lt;?php while($row = mysqli_fetch_assoc($result))
+{
+?&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;name&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;disease&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;age&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;gender&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;address&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;mobile&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;room&quot;];?&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;?php
+}
+}
+else
+echo &quot;&lt;center&gt;No details found in the patients by the name $search &lt;/center&gt;&quot; ;
+?&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+DBConnection.php:
+&lt;?php
+$conn = mysqli_connect(&#39;localhost&#39;, &#39;root&#39;, &#39;&#39;, &#39;patients&#39;);
+if(!$conn){
+die(&quot;Error: Failed to connect to database!&quot;);
+
+}
+?&gt;
+Sql :
+Create database hospital;
+Use hospital;
+CREATE TABLE PATIENT_INFO(NAME VARCHAR(30) PRIMARY
+KEY,DISEASE VARCHAR(30)
+NOT NULL,AGE VARCHAR(30),GENDER VARCHAR(30),ADDRESS
+VARCHAR(30),MOBILE
+VARCHAR(30),ROOM VARCHAR930));
+    </textarea>
+
+<!-- program 4 -->
+
+    <textarea id="program4" hidden disabled>
+        Index.php:
+&lt;html&gt;
+&lt;body&gt;
+&lt;form action=&quot;result.php&quot; method=&quot;POST&quot;&gt;
+&lt;center&gt;
+&lt;h2&gt;STUDENT MARKSHEET FORM&lt;/h2&gt;
+Student Name:
+&lt;input type=&quot;text&quot; name=&quot;stn&quot; &gt;&lt;br&gt;&lt;br&gt;
+Date of Birth:
+&lt;input type=&quot;text&quot; name=&quot;dob&quot; &gt;&lt;br&gt;&lt;br&gt;
+Gender:
+&lt;input type=&quot;radio&quot; name=&quot;gen&quot; &gt;Male
+&lt;input type=&quot;radio&quot; name=&quot;gen&quot; &gt;Female&lt;br&gt;&lt;br&gt;
+Hindi:
+&lt;input type=&quot;text&quot; name=&quot;hin&quot; &gt;&lt;br&gt;&lt;br&gt;
+English:
+&lt;input type=&quot;text&quot; name=&quot;eng&quot; &gt;&lt;br&gt;&lt;br&gt;
+Maths:
+&lt;input type=&quot;text&quot; name=&quot;math&quot; &gt;&lt;br&gt;&lt;br&gt;
+Physics:
+&lt;input type=&quot;text&quot; name=&quot;phy&quot; &gt;&lt;br&gt;&lt;br&gt;
+Chemistry:
+
+&lt;input type=&quot;text&quot; name=&quot;chem&quot; &gt;&lt;br&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Submit Query&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Result&quot;&gt;
+&lt;/center&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Result.php:
+&lt;html&gt;
+&lt;?php
+$stn=$_POST[&#39;stn&#39;];
+$dob=$_POST[&#39;dob&#39;];
+$gender=$_POST[&#39;gen&#39;];
+$hindi=$_POST[&#39;hin&#39;];
+$english=$_POST[&#39;eng&#39;];
+$maths=$_POST[&#39;math&#39;];
+$physics=$_POST[&#39;phy&#39;];
+$chemistry=$_POST[&#39;chem&#39;];
+$total=$hindi+$english+$maths+$physics+$chemistry;
+$remark1=0;
+$remark2=0;
+$remark3=0;
+$remark4=0;
+$remark5=0;
+$count=0;
+
+$s=&quot;a&quot;;
+$gen=&#39;&#39;;
+$min=35;
+$max=100;
+$hin=&#39;Hindi&#39;;
+$eng=&#39;English&#39;;
+$math=&#39;Maths&#39;;
+$phy=&#39;Physics&#39;;
+$chem=&#39;Chemistry&#39;;
+if($gender=&#39;Female&#39;)
+{
+$gen=&quot;D/O&quot;;
+}
+else
+{
+$gen=&quot;S/O&quot;;
+}
+if($hindi&lt;35)
+{
+$remark1=&quot;&lt;font color=&#39;red&#39;&gt;*&lt;/font&gt;&quot;;
+$count++;
+$s=$s.&#39;and&#39;.$hin;
+}
+else if($hindi&gt;60)
+{
+$remark1=&quot;&lt;font color=&#39;green&#39;&gt;D&lt;/font&gt;&quot;;
+
+}else
+{
+$remark1=&#39;-&#39;;
+}
+if($english&lt;35)
+{
+$remark2=&quot;&lt;font color=&#39;red&#39;&gt;*&lt;/font&gt;&quot;;
+$count++;
+$s=$s.&#39;and&#39;.$hin;
+}
+else if($english&gt;60)
+{
+$remark2=&quot;&lt;font color=&#39;green&#39;&gt;D&lt;/font&gt;&quot;;
+}else{
+$remark2=&#39;-&#39;;
+}
+if($maths&lt;35)
+{
+$remark3=&quot;&lt;font color=&#39;red&#39;&gt;*&lt;/font&gt;&quot;;
+$count++;
+$s=$s.&#39;and&#39;.$hin;
+}
+else if($maths&gt;60)
+{
+$remark3=&quot;&lt;font color=&#39;green&#39;&gt;D&lt;/font&gt;&quot;;
+
+}
+else
+{
+$remark3=&#39;-&#39;;
+
+}
+if($physics&lt;35)
+{
+$remark4=&quot;&lt;font color=&#39;red&#39;&gt;*&lt;/font&gt;&quot;;
+$count++;
+$s=$s.&#39;and&#39;.$hin;
+}
+else if($physics&gt;60)
+{
+$remark4=&quot;&lt;font color=&#39;green&#39;&gt;D&lt;/font&gt;&quot;;
+}else{
+$remark4=&#39;-&#39;;
+}
+if($chemistry&lt;35)
+{
+$remark5=&quot;&lt;font color=&#39;red&#39;&gt;*&lt;/font&gt;&quot;;
+$count++;
+$s=$s.&#39;and&#39;.$hin;
+}
+else if($chemistry&gt;60)
+{
+
+$remark5=&quot;&lt;font color=&#39;green&#39;&gt;D&lt;/font&gt;&quot;;
+}else{
+$remark5=&#39;-&#39;;
+}
+$s=str_replace(&#39;a and&#39;,&#39;&#39;,$s);
+if($count&gt;2)
+{
+$s=&#39;Fail&#39;;
+}
+else if($count==0)
+{
+$s=&#39;Pass&#39;;
+}
+else if($count&lt;=2)
+{
+$s=&quot;Compartment in&quot;.&#39;&#39;.$s;
+}
+?&gt;
+&lt;center&gt;
+&lt;table border=1&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table width=100%&gt;
+&lt;tr&gt;
+&lt;td&gt;
+
+&lt;b&gt;&lt;font size=&#39;5&#39;&gt;Student Mark list using PHP&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;/br&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;table width=100%&gt;
+&lt;tr&gt;&lt;td&gt;&lt;font size=&#39;4&#39;&gt;
+&lt;?php
+echo&quot;$stn&quot;;
+?&gt;
+&lt;?php
+echo&quot;$gen&quot;;
+?&gt;
+&lt;/font&gt;
+&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;
+&lt;font size=&#39;4&#39;&gt;
+&lt;?php
+echo&quot;$dob&quot;;
+?&gt;
+&lt;?php
+
+echo&quot;$gender&quot;;
+?&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;
+&lt;table border=1 width=100%&gt;
+&lt;tr&gt;&lt;th&gt;&lt;i&gt;Subject code&lt;/i&gt;&lt;/th&gt;
+&lt;th&gt;&lt;i&gt;Subject name&lt;/i&gt;&lt;/th&gt;
+&lt;th&gt;&lt;i&gt;Min marks&lt;/i&gt;&lt;/th&gt;
+&lt;th&gt;&lt;i&gt;Max marks&lt;/i&gt;&lt;/th&gt;
+&lt;th&gt;&lt;i&gt;Marks obtained&lt;/i&gt;&lt;/th&gt;
+&lt;th&gt;&lt;i&gt;Remark&lt;/i&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;101&lt;/td&gt;&lt;td&gt;Hindi&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;&lt;?php
+echo&quot;$hindi&quot;; ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?php echo&quot;$remark1&quot;; ?&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;102&lt;/td&gt;&lt;td&gt;English&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;&lt;?php
+echo&quot;$english&quot;; ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?php echo&quot;$remark2&quot;; ?&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;103&lt;/td&gt;&lt;td&gt;Maths&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;&lt;?php
+echo&quot;$maths&quot;; ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?php echo&quot;$remark3&quot;; ?&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;104&lt;/td&gt;&lt;td&gt;Physics&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;&lt;?php
+echo&quot;$physics&quot;; ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?php echo&quot;$remark4&quot;; ?&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;105&lt;/td&gt;&lt;td&gt;Chemistry&lt;/td&gt;&lt;td&gt;35&lt;/td&gt;&lt;td&gt;100&lt;/td&gt;&lt;td&gt;&lt;?php
+echo&quot;$chemistry&quot;; ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?php echo&quot;$remark5&quot;; ?&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Total&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;500&lt;/b&gt;&lt;/td&gt;&lt;td&gt;
+&lt;?php echo&quot;$total&quot;; ?&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;&lt;font size=&#39;4&#39;&gt;Result:&lt;?php echo&quot;$s&quot;; ?&gt;&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+&lt;/html&gt;
+    </textarea>
+
+<!-- program 5 -->
+
+    <textarea id="program5" hidden disabled>
+        Index.php:
+&lt;html&gt;
+&lt;body&gt;
+&lt;form action=&quot;resume.php&quot; method=&quot;post&quot;&gt;
+&lt;center&gt;Online Resume Submission&lt;/center&gt;
+basic&lt;br&gt;
+Name:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;br&gt;
+Email id:&lt;br&gt;
+&lt;input type=&quot;email&quot; name=&quot;mail&quot;&gt;&lt;br&gt;
+Telephone:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;phone&quot;&gt;&lt;br&gt;
+Objective:&lt;br&gt;
+&lt;input type=&quot;textarea&quot; name=&quot;objective&quot;&gt;&lt;br&gt;&lt;br&gt;
+Education Details&lt;br&gt;
+Class 10th&lt;br&gt;
+Percentage:&lt;br&gt;
+&lt;input type=&quot;number&quot; name=&quot;percentage10&quot;&gt;&lt;br&gt;
+Passing School(with address)&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;school10&quot;&gt;&lt;br&gt;
+Passing Year&lt;br&gt;
+&lt;input type=&quot;number&quot; name=&quot;year10&quot;&gt;&lt;br&gt;&lt;br&gt;
+
+Class 12th&lt;br&gt;
+Percentage:&lt;br&gt;
+&lt;input type=&quot;number&quot; name=&quot;percent&quot;&gt;&lt;br&gt;
+Passing School(with address)&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;college&quot;&gt;&lt;br&gt;
+Passing Year&lt;br&gt;
+&lt;input type=&quot;number&quot; name=&quot;collegeyear&quot;&gt;&lt;br&gt;
+Course&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;course&quot;&gt;&lt;br&gt;&lt;br&gt;
+Summer Training&lt;br&gt;
+Company Name:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;stcompanyname&quot;&gt;&lt;br&gt;
+Duration:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;stduration&quot;&gt;&lt;br&gt;
+Project Duration:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;stproject&quot;&gt;&lt;br&gt;
+Technology Used:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;sttechnology&quot;&gt;&lt;br&gt;&lt;br&gt;
+Projects Undertaken:&lt;br&gt;&lt;br&gt;
+Project Final year:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;projectfinalyear&quot;&gt;&lt;br&gt;&lt;br&gt;
+Achivement:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;achievement&quot;&gt;&lt;br&gt;&lt;br&gt;
+Skill Set:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;mandatoryskill&quot;&gt;&lt;br&gt;&lt;br&gt;
+PersionalDetails:&lt;br&gt;
+
+Date of Birth:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;dob&quot;&gt;&lt;br&gt;
+Father&#39;s Name:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;fathersname&quot;&gt;&lt;br&gt;
+Landline No:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;landline&quot;&gt;&lt;br&gt;
+Alternative No:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;otherno&quot;&gt;&lt;br&gt;&lt;br&gt;
+Declaration:&lt;br&gt;
+Date:&lt;br&gt;
+&lt;input type=&quot;date&quot; name=&quot;date&quot;&gt;&lt;br&gt;
+Time:&lt;br&gt;
+&lt;input type=&quot;time&quot; name=&quot;time&quot;&gt;&lt;br&gt;
+Place:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;place&quot;&gt;&lt;br&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+Resume.php:
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;style&gt;
+#main{
+
+height:20%;
+border-top:1px solid black;
+border-bottom:1px solid black;
+}
+#header{
+margin-top:3%;
+margin-bottom:-3px;
+}
+.year{
+width:10%;
+}
+.institue{
+width:40%;
+}
+.course{
+width:35%;
+}
+.percent{
+width:30%;
+}
+ul{
+margin-left:5%;
+}
+.data{
+float:left;
+
+}
+#disclaimer{
+width:100%;
+}
+.table{
+border:1px solid black;
+margin-top:5%;
+}
+h2
+{
+border:1px solid black;
+margin-top:0%;
+}
+#declaration{
+border:none;
+margin-top:5%;
+}
+th{
+text-align:left;
+}
+th,td,table{
+padding:10px;
+}
+table{
+margin-top:-1.5%;
+
+width:100%;
+}
+#heading{
+color:white;
+background-color:#303030;
+}
+p{
+padding-left:1%;
+}
+&lt;/style&gt;
+&lt;script
+src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+print();
+});
+&lt;/script&gt;
+&lt;body&gt;
+&lt;div id=&quot;main&quot;&gt;
+&lt;h1 id=&quot;name&quot;&gt;&lt;?php echo $_POST[&#39;name&#39;];?&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div id=&quot;header&quot;&gt;&lt;?php echo
+$_POST[&#39;name&#39;].&quot;|&quot;.$_POST[&#39;mail&#39;].&quot;|&quot;.$_POST[&#39;phone&#39;];?&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class=&quot;table&quot;&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Objective&lt;/h2&gt;
+
+&lt;p&gt;&lt;?php echo $_POST[&#39;objective&#39;];?&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;table&quot;&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Education&lt;/h2&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Year&lt;/th&gt;
+&lt;th&gt;Institute&lt;/th&gt;
+&lt;th&gt;Cource&lt;/th&gt;
+&lt;th&gt;Percentage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;year&quot;&gt;&lt;?php echo $_POST[&#39;collegeyear&#39;];?&gt;&lt;/td&gt;
+&lt;td class=&quot;institute&quot;&gt;&lt;?php echo $_POST[&#39;college&#39;];?&gt;&lt;/td&gt;
+&lt;td class=&quot;collegecourse&quot;&gt;&lt;?php echo $_POST[&#39;course&#39;];?&gt;&lt;/td&gt;
+&lt;td class=&quot;collegepercentage&quot;&gt;&lt;?php echo $_POST[&#39;percent&#39;];?&gt;&lt;/td&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;year&quot;&gt;&lt;?php echo $_POST[&#39;year10&#39;];?&gt;&lt;/td&gt;
+&lt;td class=&quot;instute&quot;&gt;&lt;?php echo $_POST[&#39;school10&#39;];?&gt;&lt;/td&gt;
+&lt;td class=&quot;course&quot;&gt;10th&lt;/td&gt;
+&lt;td class=&quot;percent&quot;&gt;&lt;?php echo $_POST[&#39;percentage10&#39;];?&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class=&quot;table&quot;&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Summer Training&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;
+Company Name:&lt;?php echo $_POST[&#39;stcompanyname&#39;];?&gt;
+&lt;/li&gt;&lt;li&gt;
+Duration:&lt;?php echo $_POST[&#39;stduration&#39;];?&gt;
+&lt;/li&gt;&lt;li&gt;
+Project Undertaken:&lt;?php echo $_POST[&#39;stproject&#39;];?&gt;
+&lt;/li&gt;&lt;li&gt;
+Technology Used:&lt;?php echo $_POST[&#39;sttechnology&#39;];?&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;table&quot;&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Projects Undertaken&lt;/h2&gt;
+&lt;/ul&gt;
+&lt;?php
+echo&quot;&lt;li&gt;&quot;.$_POST[&#39;projectfinalyear&#39;].&quot;&lt;/li&gt;&quot;;
+$i=1;
+while(isset($_POST[&#39;project&#39;.$i]))
+{
+if(!empty($_POST[&#39;project&#39;.$i]))
+{
+
+echo&quot;&lt;li&gt;&quot;.$_POST[&#39;project&#39;.$i].&quot;&lt;/li&gt;&quot;;
+}
+$i++;
+}
+?&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;table&quot;&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Achivements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;?php
+$i=1;
+while(isset($_POST[&#39;achivement&#39;.$i]))
+{
+if(!empty($_POST[&#39;achivement&#39;.$i]))
+{
+echo&quot;&lt;li&gt;&quot;.$_POST[&#39;achivement&#39;.$i].&quot;&lt;/li&gt;&quot;;
+}
+$i++;
+}
+?&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;table&quot;&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Skill Set&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;?php
+echo&quot;&lt;li&gt;&quot;.$_POST[&#39;mandatoryskill&#39;].&quot;&lt;/li&gt;&quot;;
+$i=1;
+while(isset($_POST[&#39;skill&#39;.$i]))
+{
+if(!empty($_POST[&#39;skill&#39;.$i]))
+{
+echo&quot;&lt;li&gt;&quot;.$_POST[&#39;skill&#39;.$i].&quot;&lt;/li&gt;&quot;;
+}
+$i++;
+}
+?&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;table&quot;&gt;
+&lt;h2 id=&quot;heading&quot;&gt;Personal Details&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span&gt;Date Of Birth:&lt;/span&gt;&lt;?php echo $_POST[&#39;dob&#39;];?&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;Father&#39;s Name:&lt;/span&gt;&lt;?php echo $_POST[&#39;fathersname&#39;];?&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;Landline No:&lt;/span&gt;&lt;?php echo $_POST[&#39;landline&#39;];?&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;Alternate No:&lt;/span&gt;&lt;?php echo $_POST[&#39;otherno&#39;];?&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&quot;disclaimer&quot;&gt;
+
+&lt;h2 id=&quot;declaration&quot;&gt;Declaration&lt;/h2&gt;
+&lt;p class=&quot;data&quot;&gt;
+I hereby declare thet the details provided by me in this resume are correct
+and i have knowingly not omitted/ misreprsented any information. I am aware
+that the company can use this data for verification purposes and any material
+inconsistency identified between the details shared above versus actual
+information would have a bearing on my employement, based upon company
+policies.
+&lt;/p&gt;&lt;p&gt;
+&lt;span&gt;Date:&lt;/span&gt;&lt;?php echo $_POST[&#39;date&#39;];?&gt;
+&lt;/p&gt;&lt;p&gt;
+&lt;span&gt;Time:&lt;/span&gt;&lt;?php echo $_POST[&#39;time&#39;];?&gt;
+&lt;/p&gt;&lt;p&gt;
+&lt;span&gt;Place:&lt;/span&gt;&lt;?php echo $_POST[&#39;place&#39;];?&gt;
+&lt;/p&gt;&lt;p&gt;
+&lt;span&gt;Signature:&lt;/span&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </textarea>
+
+<!-- program 6 -->
+
+    <textarea id="program6" hidden disabled>
+        Index.php:
+&lt;?php
+if($_POST)
+{
+include&#39;config.php&#39;;
+$username=$_POST[&#39;username&#39;];
+$password=$_POST[&#39;password&#39;];
+$sUser=mysqli_real_escape_string($conn,$username);
+$sPass=mysqli_real_escape_string($conn,$password);
+$query=&quot;SELECT * FROM `login_info` WHERE
+`username`=&#39;$username&#39;&amp;&amp;`password`=&#39;$password&#39;&quot;;
+$result=mysqli_query($conn,$query);
+if(mysqli_num_rows($result)==1)
+{
+
+}
+else
+
+}
+?&gt;
+session_start();
+$_SESSION[&#39;anything&#39;]=&#39;something&#39;;
+header(&#39;location:home.php&#39;);
+
+echo&#39;Username and Password Not valid!&#39;;
+
+&lt;form method=&quot;post&quot;&gt;
+Username&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;br&gt;
+Password&lt;br&gt;
+&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;
+
+Home.php:
+&lt;?php
+session_start();
+if(!$_SESSION[&#39;anything&#39;])
+{
+header(&#39;location:index.php&#39;);
+}
+?&gt;
+&lt;center&gt;
+&lt;h1&gt;Hindusthan College of Arts and Science&lt;/h1&gt;
+&lt;h2&gt;Welcome to Master of Computer Application&lt;/h2&gt;
+&lt;ahref=&quot;logout.php&quot;&gt;Logout&lt;/a&gt;&lt;/center&gt;
+
+Logout.php:
+&lt;?php
+session_start();
+
+if(session_destroy()){
+header(&#39;location:index.php&#39;);
+}?&gt;
+Config.php:
+&lt;?php
+$conn = mysqli_connect(&#39;localhost&#39;, &#39;root&#39;, &#39;&#39;, &#39;login&#39;);
+if(!$conn){
+die(&quot;Error: Failed to connect to database!&quot;);
+}?&gt;
+    </textarea>
+
+<!-- program 7 -->
+
+    <textarea id="program7" hidden disabled>
+        &lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Employee Details in Database&lt;/h2&gt;&lt;/center&gt;
+&lt;form action=&quot;InsertDetails.php&quot; method=&quot;post&quot;&gt;
+&lt;table border=&quot;2&quot; align=&quot;center&quot; cellpadding=&quot;5&quot; cellspacing=&quot;5&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt; Employee NO :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;eno&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Employee Name :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;ename&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Address :&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;address&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Phone No:&lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;phone&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt; Email id: &lt;/td&gt;
+&lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;email&quot; size=&quot;48&quot;&gt;&lt;/td&gt;
+
+&lt;/tr&gt;&lt;tr&gt;
+&lt;td&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+InsertDetails.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Employee Details in Database&lt;/h2&gt;&lt;/center&gt;
+&lt;br&gt;
+&lt;?php
+include(&quot;DBConnection.php&quot;);
+$eno=$_POST[&quot;eno&quot;];
+$ename=$_POST[&quot;ename&quot;];
+$address=$_POST[&quot;address&quot;];
+$phone=$_POST[&quot;phone&quot;];
+$email=$_POST[&quot;email&quot;];
+$query = &quot;insert into details_info(eno,ename,address,phone,email)
+values(&#39;$eno&#39;,&#39;$ename&#39;,&#39;$address&#39;,&#39;$phone&#39;,&#39;$email&#39;)&quot;; //Insert query to add
+
+employee details into the details_info table
+$result = mysqli_query($conn,$query);
+?&gt;
+&lt;h3&gt; Employee information is inserted successfully &lt;/h3&gt;
+&lt;a href=&quot;SearchDetails.php&quot;&gt;To search for the employee information click here
+&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+SearchDetails.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Employee Details in Database&lt;/h2&gt;&lt;/center&gt;
+&lt;form action = &quot;DisplayDetails.php&quot; method=&quot;get&quot;&gt;
+&lt;br&gt;
+&lt;center&gt;Enter the name of the employee to be searched :
+&lt;input type=&quot;text&quot; name=&quot;search&quot; size=&quot;48&quot;&gt;
+&lt;br&gt;&lt;/br&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+&lt;/center&gt;
+&lt;br&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+DisplayDetails.php:
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body bgcolor=&quot;87ceeb&quot;&gt;
+&lt;center&gt;&lt;h2&gt;Employee Details in Database&lt;/h2&gt;&lt;/center&gt;
+&lt;br&gt;
+&lt;?php
+include(&quot;DBConnection.php&quot;);
+$search = $_REQUEST[&quot;search&quot;];
+$query = &quot;select eno,ename,address,phone,email from details_info where ename
+like &#39;%$search%&#39;&quot;; //search with a book name in the table book_info
+$result = mysqli_query($conn,$query);
+if(mysqli_num_rows($result)&gt;0)if(mysqli_num_rows($result)&gt;0)
+{
+?&gt;
+&lt;table border=&quot;2&quot; align=&quot;center&quot; cellpadding=&quot;5&quot; cellspacing=&quot;5&quot;&gt;
+&lt;tr&gt;
+&lt;th&gt; Employee NO &lt;/th&gt;
+&lt;th&gt; Employee Name &lt;/th&gt;
+&lt;th&gt; Address &lt;/th&gt;
+&lt;th&gt; Phone No &lt;/th&gt;
+&lt;th&gt; Email id &lt;/th&gt;
+&lt;/tr&gt;
+&lt;?php while($row = mysqli_fetch_assoc($result))
+{
+?&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;eno&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;ename&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;address&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;phone&quot;];?&gt;&lt;/td&gt;
+&lt;td&gt;&lt;?php echo $row[&quot;email&quot;];?&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;?php
+}
+}
+else
+echo &quot;&lt;center&gt;No details found in the database by the name $search &lt;/center&gt;&quot;
+;
+?&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+DBConnection.php:
+&lt;?php
+$conn = mysqli_connect(&#39;localhost&#39;, &#39;root&#39;, &#39;&#39;, &#39;employee&#39;);
+if(!$conn){
+die(&quot;Error: Failed to connect to database!&quot;);
+
+}
+?&gt;
+    </textarea>
+    <textarea id="program8" hidden disabled>h</textarea>
+    <textarea id="program9" hidden disabled>i</textarea>
+    <textarea id="program10" hidden disabled>j</textarea>
+    <textarea id="program11" hidden disabled>k</textarea>
+    <textarea id="program12" hidden disabled>l</textarea>
+    <textarea id="program13" hidden disabled>m</textarea>
+    <textarea id="program14" hidden disabled>n</textarea>
+    <textarea id="program15" hidden disabled>o</textarea>
+    <textarea id="program16" hidden disabled>p</textarea>
+</body>
+</html>
